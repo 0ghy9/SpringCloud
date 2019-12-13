@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+# 服务在启动时，会把自己当做一个 Eureka 客户端去注册到 Eureka 服务器上，且从服务器上拉取信息
+# 而该服务本身就是一个 Eureka 服务器
+eureka:
+  client:
+    # 声明是否将自己的信息注册到 Eureka 服务器上
+    register-with-eureka: false
+    # 是否到 Eureka 服务器中抓取注册信息
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
